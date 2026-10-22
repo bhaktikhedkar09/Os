@@ -1,0 +1,46 @@
+# 1. File and directory management
+pwd
+mkdir Demo
+touch file1.txt
+ls
+cp file1.txt copy.txt
+mv copy.txt newfile.txt
+mv newfile.txt Demo/
+ls Demo
+rm file1.txt
+
+# 2. File permissions
+chmod 644 Demo/newfile.txt
+sudo chown student Demo/newfile.txt
+getfacl Demo/newfile.txt
+setfacl -m u:student:rw Demo/newfile.txt
+getfacl Demo/newfile.txt
+
+# 3. Process and system management
+ps
+top
+uname -a
+free -h
+sleep 100 &
+kill $!
+
+# 4. Package management (Ubuntu/Debian)
+sudo apt update
+
+# For Fedora/RHEL, use this instead:
+# sudo dnf check-update
+
+# 5. Service management
+systemctl status cron
+
+# 6. System logs
+journalctl -n 5
+
+# 7. Networking
+ip addr
+ping -c 4 127.0.0.1
+ss -tuln
+ip route
+
+# 8. Display final directory structure
+ls -R
